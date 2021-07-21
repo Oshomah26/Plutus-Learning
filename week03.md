@@ -73,6 +73,6 @@ We can play with intervals a bit:
 1. Run cabal repl in this week's directory 
 2. Run import Plutus.V1.Ledger.Interval
 3. Test interval with this an example: 
-   // **interval (10 :: Integer) 20**
+   \\ interval (10 :: Integer) 20
 4. You can check if 9 is a member of the interval by running: 
-   // **member 9 $ interval (10 :: Integer) 20
+   // member 9 $ interval (10 :: Integer) 20
