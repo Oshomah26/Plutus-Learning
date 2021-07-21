@@ -104,9 +104,8 @@ To also understand the way the txSignedBy function works. You can go on repl to 
 // txSignedBy :: TxInfo -> PubKeyHash -> Bool 
 
 After declaring the datatype **info** we can delcare our conditions. To check that you can go to the repl and check the *:t txSignedBy* and produces 
+txSignedBy :: TxInfo -> PubKeyHash -> Bool   
 
-``` txSignedBy :: TxInfo -> PubKeyHash -> Bool   
-```
 After the first condition has been declared, we head to the second condition of the deadline. We need to use the validity interval that starts after the deadline. One way to do this is to use a Validity interval called contains with a range. 
 ```deadlineReached :: Bool 
    deadlineReached = contains (from $ deadline dat) $ txInfoValidRange info
@@ -114,6 +113,21 @@ After the first condition has been declared, we head to the second condition of 
 ![image](https://user-images.githubusercontent.com/51214370/126462784-9c42e2f1-01be-4550-9178-19f155b87d33.png)
 
 **Third step**
+Then we move to the Vesting data type: 
+
+![image](https://user-images.githubusercontent.com/51214370/126542195-e32d7628-5734-46e3-9f12-15f0fd764e41.png)
+
+Remember that most of this is just boiler plate so you just change the types that have been declared for the current transaction. 
+The focus of this lecture is on offchain validation. 
+
+At the top of the module, there are some GHC extensions that have been added like: 
+``` {-# LANGUAGE DeriveAnyClass      #-}
+    {-# LANGUAGE DeriveGeneric       #-}
+```
+Also imported were: 
+``` import           Data.Aeson           (ToJSON, FromJSON)
+    import           GHC.Generics         (Generic)
+```
 
 
 
