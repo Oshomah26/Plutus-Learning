@@ -122,14 +122,25 @@ The focus of this lecture is on offchain validation.
 
 At the top of the module, there are some GHC extensions that have been added like: 
 
-// {-# LANGUAGE DeriveAnyClass      #-}
-// {-# LANGUAGE DeriveGeneric       #-}
+ {-# LANGUAGE DeriveAnyClass      #-}
+ {-# LANGUAGE DeriveGeneric       #-}
 
 Also imported were: 
-// import           Data.Aeson           (ToJSON, FromJSON)
-// import           GHC.Generics         (Generic)
+ import           Data.Aeson           (ToJSON, FromJSON)
+ import           GHC.Generics         (Generic)
 
+**The Offchain part**
+``` 
+type VestingSchema 
+```
+This part defines the endpoint that we want to expose to the user. Like the examples from last week we have **give**(For the person who wants to give the money) and **grab**(This is for the beneficiary to collect) 
 
+For **give**. This Endpoint would do is it will create a UTxO at the Vesting address with a specified amount and the correct datum. Our VestingDatum contains our beneficiary and our deadline :
+![image](https://user-images.githubusercontent.com/51214370/126546545-cf7f8b1f-6b57-4361-9e6d-c0629a849381.png)
+
+For the **grab** Endpoint, we only need the unit ()
+
+Then the gift parameters i
 
 
 
