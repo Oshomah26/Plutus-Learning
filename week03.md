@@ -100,12 +100,16 @@ To understand how the TxInfo was gotten
 
 ![image](https://user-images.githubusercontent.com/51214370/126463671-ad9c7acb-9659-454f-a18d-382d540815bf.png)
 
-![image](https://user-images.githubusercontent.com/51214370/126462784-9c42e2f1-01be-4550-9178-19f155b87d33.png)
-
 To also understand the way the txSignedBy function works. You can go on repl to check :t txSignedBy and you'll get
 // txSignedBy :: TxInfo -> PubKeyHash -> Bool 
 
-Now 
+After declaring the datatype **info** we can delcare our conditions. To check that you can go to the repl and check the *:t txSignedBy* and produces 
+*txSignedBy :: TxInfo -> PubKeyHash -> Bool*   
+
+![image](https://user-images.githubusercontent.com/51214370/126462784-9c42e2f1-01be-4550-9178-19f155b87d33.png)
+
+For the second condition 
+
 
 
 
