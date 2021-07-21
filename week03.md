@@ -104,8 +104,9 @@ To also understand the way the txSignedBy function works. You can go on repl to 
 // txSignedBy :: TxInfo -> PubKeyHash -> Bool 
 
 After declaring the datatype **info** we can delcare our conditions. To check that you can go to the repl and check the *:t txSignedBy* and produces 
-*txSignedBy :: TxInfo -> PubKeyHash -> Bool*   
 
+```txSignedBy :: TxInfo -> PubKeyHash -> Bool   
+```
 After the first condition has been declared, we head to the second condition of the deadline. We need to use the validity interval that starts after the deadline. One way to do this is to use a Validity interval called contains with a range. 
 ```deadlineReached :: Bool 
    deadlineReached = contains (from $ deadline dat) $ txInfoValidRange info
