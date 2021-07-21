@@ -122,13 +122,13 @@ The focus of this lecture is on offchain validation.
 
 At the top of the module, there are some GHC extensions that have been added like: 
 
-//{-# LANGUAGE DeriveAnyClass      #-}
-//{-# LANGUAGE DeriveGeneric       #-}
+// {-# LANGUAGE DeriveAnyClass      #-}
+// {-# LANGUAGE DeriveGeneric       #-}
 
 Also imported were: 
-```import           Data.Aeson           (ToJSON, FromJSON)
-   import           GHC.Generics         (Generic)
-```
+// import           Data.Aeson           (ToJSON, FromJSON)
+// import           GHC.Generics         (Generic)
+
 
 
 
