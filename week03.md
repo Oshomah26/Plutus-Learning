@@ -103,6 +103,8 @@ To understand how the TxInfo was gotten
 To also understand the way the txSignedBy function works. You can go on repl to check :t txSignedBy and you'll get
 // txSignedBy :: TxInfo -> PubKeyHash -> Bool 
 
+Now 
+
 
 
 
