@@ -72,7 +72,37 @@ Here we can see there are different convenient functions.
 We can play with intervals a bit: 
 1. Run cabal repl in this week's directory 
 2. Run import Plutus.V1.Ledger.Interval
-3. Test interval with this an example: 
-   ** interval (10 :: Integer) 20**
-4. You can check if 9 is a member of the interval by running: 
-   //member 9 $ interval (10 :: Integer) 20
+3. Test Time range with this an example: 
+   **interval (10 :: Integer) 20**
+   You can check if 9 is a member of the interval by running: 
+   **member 9 $ interval (10 :: Integer) 20**
+   Test out other functions like *from*, *to*, *intersection* :  
+   **member 11 $ from (30 :: Integer)** 
+   **member 70 $ to (30 :: Integer)**  
+   **intersection (interval (10 :: Integer) 20) $ interval 18 30** (This takes an interval  )
+   **contains (to (100 :: Integer)) $ interval 30 80** (This returns a Bool(True or False) when it takes an interval that stops at 100 that's between 30 to 80)
+
+**TESTING THE TIME RANGE OUT** 
+This is the first example of our first validator that actually uses the context. The idea is to put money into a script and only one person can receive the money only when a certain period has been reached. 
+
+**First step** 
+Think of the type of Datum and Redeemer. It makes sense to have the two of Datum( declared as VestingDatum) datatypes which are: 
+1. Beneficiary 
+2. Deadline 
+
+![image](https://user-images.githubusercontent.com/51214370/126460872-0ade4bdd-7d55-4ffc-a7c6-363cb2dea9a5.png)
+
+**Second step**
+We will then define the **mkValidator** script. For the Redeemerwe will need to know if it is signed by the beneficiary and if it was submitted after the deadline. Since the information is in the transaction, we can just declare it as unit **()**. 
+
+To understand how the TxInfo was gotten: 
+![image](https://user-images.githubusercontent.com/51214370/126463671-ad9c7acb-9659-454f-a18d-382d540815bf.png)
+
+![image](https://user-images.githubusercontent.com/51214370/126462784-9c42e2f1-01be-4550-9178-19f155b87d33.png)
+
+To also understand the way the txSignedBy function works. You can go on repl to check :t txSignedBy and you'll get
+// txSignedBy :: TxInfo -> PubKeyHash -> Bool 
+
+
+
+
