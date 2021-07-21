@@ -96,6 +96,8 @@ Think of the type of Datum and Redeemer. It makes sense to have the two of Datum
 We will then define the **mkValidator** script. For the Redeemerwe will need to know if it is signed by the beneficiary and if it was submitted after the deadline. Since the information is in the transaction, we can just declare it as unit **()**. 
 
 To understand how the TxInfo was gotten 
+
+
 ![image](https://user-images.githubusercontent.com/51214370/126463671-ad9c7acb-9659-454f-a18d-382d540815bf.png)
 
 ![image](https://user-images.githubusercontent.com/51214370/126462784-9c42e2f1-01be-4550-9178-19f155b87d33.png)
