@@ -69,5 +69,8 @@ Here we can see there are different convenient functions.
 ![image](https://user-images.githubusercontent.com/51214370/126441849-b1d4b54c-39dc-4259-8362-5571c84b3135.png)
 
 
-
-
+We can play with intervals a bit: 
+1. Run cabal repl in this week's directory 
+2. Run import Plutus.V1.Ledger.Interval
+3. Test interval with this an example: // **interval (10 :: Integer) 20**
+4. You can check if 9 is a member of the interval by running: // **member 9 $ interval (10 :: Integer) 20
